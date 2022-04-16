@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script>
-    let resize=()=>{
-      document.querySelector('.backimage').style.height=innerHeight-5+'px';
-    };
-    addEventListener('resize',resize);
-    resize();
-  </script>
   <meta name="viewport" content="width=device-width">
   <title>Hrnec</title>
   <link rel="stylesheet" href="main.css">
@@ -61,4 +54,11 @@
 <hr class="oddelovak">
 z
 </body>
+<script>
+  let resize=()=>{
+    document.querySelector('.backimage').style.height=innerHeight-5+'px';
+  };
+  addEventListener('resize',resize);
+  resize();
+</script>
 </html>
