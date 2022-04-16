@@ -1,149 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Ubuntu:wght@300&display=swap');
+
 *{
-  margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "Encode Sans Expanded", sans-serif;
-  scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-family: "Ubuntu", sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-body {
-  background-color: #000000;
+body{
+    font-family: Montserrat;
+    background-color: #232933;
+    color: #ebebeb;
+}
+.toggle-sidebar{
+    visibility: hidden;
 }
 
-::-webkit-scrollbar{
-  height: 8px;
-  width: 10px;
+.header{
+    background-color: #232933;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    box-shadow: 0px 0px 10px #232933;
+    margin-top: -45px;
 }
 
-::-webkit-scrollbar-thumb{
-  background: #ffffff;
-  transition: 0.5s all 0.5 ease;
-  width: 2px;
-  border-radius: 15px;
+.profile img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 100px;
+    border: 2px solid #ebebeb;
 }
 
-::-webkit-scrollbar-thumb:hover{
-  background: #bdbdbd;
-  transition: 0.5s all 0.5 ease;
+.sidebar{
+    background-color: #232933;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    margin-top: 40px;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
 }
 
-::-webkit-scrollbar-track{
-  border-radius: 15px;
-  background: #000000;
+.profile{
+    text-align: center;
+    padding: 20px;
+}
+
+.profile h3{
+    margin: 10px 0;
+}
+
+.profile li{
+    list-style: none;
+    display: inline-flex;
+}
+
+.profile li a{
+    margin: 0 5px;
+    padding: 10px;
+    list-style: none;
+    display: inline-flex;
+    font-size: 20px;
+    color: #ebebeb;
+    transition: all 0.5s;
+}
+
+.profile li a:hover{
+    background-color: #ebebeb;
+    color: #232933;
+    transform: rotate(360deg);
+    border: 1px #232933;
+    border-radius: 10px;
+}
+
+.menu li a{
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.menu li a:hover{
+    background: #ebebeb;
+    color: #232933;
+    transition: all 0.3s;
+}
+
+.toggle-icon div{
+    background: #ebebeb;
+    width: 100%;
+    height: 3px;
+    transition: all 0.3s;
+}
+
+.toggle-icon{
+    position: absolute;
+    top: 22px;
+    left: 15px;
+    width: 22px;
+    height: 22px;
+    z-index: 9999;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.bar-top{
+    border-radius: 10px;
+}
+
+.bar-center{
+    margin: 5px 0;
+    border-radius: 10px;
+}
+
+.bar-bottom{
+    border-radius: 10px;
+}
+
+input[type="checkbox"]:checked ~ .sidebar{
+    transform: translateX(0);
+    margin-top: 12px;
+}
+
+input[type="checkbox"]:checked ~ .toggle-icon > .bar-top{
+    transform: rotate(135deg);
+}
+
+input[type="checkbox"]:checked ~ .toggle-icon > .bar-center{
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked ~ .toggle-icon > .bar-bottom{
+    transform: rotate(-135deg);
+    margin-top: -16px;
+}
+
+.backimage {
+    margin-top: 40px;
+    background-image: url(back-main.png);
+    background-position: center center;
+    background-repeat: none;
+    background-size: cover;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 700px;
+}
+
+.img-text{
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.img-text2{
+    padding-top: 20px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+
+.oddelovak{
+    opacity: 0;
+    border: 135px solid #000000;
+}
+
+.oddelovak-mini{
+    opacity: 0;
+    border: 2px solid #000000;
 }
 
 .scroll-down {
-  height: 50px;
-  width: 30px;
-  position: absolute;
-  left: 50%;
-  bottom: 20px;
-  cursor: pointer;
-}
-.scroll-down::before,
-.scroll-down::after {
-  content: "";
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  height: 10px;
-  width: 10px;
-  transform: translate(-50%, -100%) rotate(45deg);
-  border: 3px solid rgb(255, 255, 255);
-  border-top: transparent;
-  border-left: transparent;
-  animation: scroll-down 1s ease-in-out infinite;
-}
-.scroll-down::before {
-  top: 30%;
-  animation-delay: 0.3s;
-}
-
-@keyframes scroll-down {
-  0% {
-    opacity: 0;
+    height: 50px;
+    width: 30px;
+    border: 3px solid rgb(255, 255, 255);
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    border-radius: 50px;
+    cursor: pointer;
   }
-  30% {
-    opacity: 1;
+  .scroll-down::before,
+  .scroll-down::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 10px;
+    width: 10px;
+    transform: translate(-50%, -100%) rotate(45deg);
+    border: 3px solid rgb(255, 255, 255);
+    border-top: transparent;
+    border-left: transparent;
+    animation: scroll-down 1s ease-in-out infinite;
   }
-  60% {
-    opacity: 1;
+  .scroll-down::before {
+    top: 30%;
+    animation-delay: 0.3s;
+    /* animation: scroll-down 1s ease-in-out infinite; */
   }
-  100% {
-    top: 90%;
-    opacity: 0;
+  
+  @keyframes scroll-down {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      top: 90%;
+      opacity: 0;
+    }
   }
-}
-
-.hmain{
-  color: #ffffff;
-  font-size: 45px;
-  text-align: center;
-}
-
-nav{
-	position: relative;
-	margin: 10px auto 0;
-	width: 420px;
-	height: 50px;
-	border-radius: 8px;
-	font-size: 0;
-	box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
-}
-nav a{
-	font-size: 15px;
-	color: rgb(255, 255, 255);
-	text-decoration: none;
-	line-height: 50px;
-	position: relative;
-	z-index: 1;
-	display: inline-block;
-	text-align: center;
-}
-nav .animation{
-	position: absolute;
-  text-transform: uppercase;
-	height: 5px;
-	bottom: 0;
-	z-index: 0;
-	color: #E1E1E1;
-	background: #000000;
-	border-radius: 8px;
-	transition: all .5s ease 0s;
-}
-nav a:nth-child(1){
-	width: 100px;
-}
-nav .start-home, a:nth-child(1):hover~.animation{
-	width: 100px;
-	left: 0px;
-}
-nav a:nth-child(2):hover~.animation{
-  background: #ffffff;
-	width: 100px;
-	left: 0px;
-}
-nav a:nth-child(2){
-	width: 100px;
-}
-nav a:nth-child(3):hover~.animation{
-  background: #ffffff;
-	width: 100px;
-	left: 100px;
-}
-nav a:nth-child(3){
-	width: 100px;
-}
-nav a:nth-child(4):hover~.animation{
-  background: #ffffff;
-	width: 100px;	
-	left: 200px;
-}
-nav a:nth-child(4){
-	width: 150px;
-}
-nav a:nth-child(5):hover~.animation{
-  background: #ffffff;
-	width: 100px;
-	left: 300px;
-}
