@@ -54,4 +54,11 @@
 <hr class="oddelovak">
 z
 </body>
+<script>
+  let resize=()=>{
+      document.querySelector('.backimage').style.height=innerHeight-5+'px';
+  };
+  addEventListener('resize',resize);
+  resize();
+</script>
 </html>
