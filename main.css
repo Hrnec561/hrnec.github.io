@@ -10,7 +10,7 @@
 
 body{
     font-family: Montserrat;
-    background-color: #232933;
+    background-color: #1c2027;
     color: #ebebeb;
 }
 
@@ -33,7 +33,7 @@ body{
   
 ::-webkit-scrollbar-track{
     border-radius: 15px;
-    background: #000000;
+    background-color: #000000;
 }
 
 .toggle-sidebar{
@@ -44,10 +44,15 @@ body{
     background-color: #232933;
     width: 100%;
     height: 60px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 15px;
+    margin-top: 10px;
     position: fixed;
-    z-index: 9999;
-    box-shadow: 0px 0px 10px #232933;
+    box-shadow: 0px 0px 20px #000000;
     margin-top: -45px;
+    z-index: 9999;
 }
 
 .profile img{
@@ -61,6 +66,7 @@ body{
 
 .sidebar{
     background-color: #232933;
+    z-index: -1;
     height: 100%;
     width: 250px;
     position: fixed;
@@ -97,6 +103,7 @@ body{
     background-color: #ebebeb;
     color: #232933;
     transform: rotate(360deg);
+    box-shadow: 0px 0px 10px #ffffff;
     border: 1px #232933;
     border-radius: 10px;
 }
@@ -109,11 +116,13 @@ body{
     padding: 20px;
     font-weight: 600;
     border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    transition: ease-out 0.3s;
 }
 
 .menu li a:hover{
-    background: #ebebeb;
+    box-shadow: 0px 0px 10px #ffffff;
     color: #232933;
+    background-color: #ebebeb;
     transition: all 0.3s;
 }
 
@@ -212,6 +221,7 @@ input[type="checkbox"]:checked ~ .toggle-icon > .bar-bottom{
     bottom: 20px;
     border-radius: 50px;
     cursor: pointer;
+    transition: 0.3s all ease;
 }
 
 .scroll-down::before,
