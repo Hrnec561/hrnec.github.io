@@ -70,9 +70,9 @@ body{
     width: 250px;
     box-shadow: 5px 16px 15px 0px #000000;
     position: fixed;
-    margin-top: 40px;
-    transform: translateX(-250px);
-    transition: transform 250ms ease-in-out;
+    margin-top: 12px;
+    transform: translate(-300px, -5px);
+    transition: transform 0.3s ease-in-out;
 }
 
 .profile{
@@ -160,7 +160,7 @@ body{
 }
 
 input[type="checkbox"]:checked ~ .sidebar{
-    transform: translateX(0);
+    transform: translate(0, -5px);
     margin-top: 12px;
 }
 
