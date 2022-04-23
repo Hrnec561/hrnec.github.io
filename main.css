@@ -203,6 +203,22 @@ input[type="checkbox"]:checked ~ .toggle-icon > .bar-bottom{
     font-weight: 600;
 }
 
+.go-back{
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 1rem 3rem;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 35px;
+    transition: all ease 0.3s;
+}
+
+.go-back:hover{
+    background-color: #ffffff;
+    color: #000000;
+    transition: all ease 0.3s;
+}
 
 .oddelovak{
     opacity: 0;
