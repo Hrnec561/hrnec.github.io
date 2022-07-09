@@ -39,17 +39,17 @@ def bitcoin():
         week = data["data"]["1"]["quote"]["USD"]["percent_change_7d"]
         month = data["data"]["1"]["quote"]["USD"]["percent_change_30d"]
         
-    print(f"""
-        =======================================
-                        BITCOIN
-        =======================================
-        Price: {round(price, 2)}$
-        Percent change last hour: {round(hour, 2)}%
-        Percent change 1 day: {round(day, 2)}%
-        Percent change 1 week: {round(week, 2)}%
-        Percent change 1 month: {round(month, 2)}%
-        =======================================
-        """)
+        print(f"""
+=======================================
+                BITCOIN
+=======================================
+Price: {round(price, 2)}$
+Percent change last hour: {round(hour, 2)}%
+Percent change 1 day: {round(day, 2)}%
+Percent change 1 week: {round(week, 2)}%
+Percent change 1 month: {round(month, 2)}%
+=======================================
+""")
     except ConnectionError:
         print("ConnectionError")
     </py-script>
