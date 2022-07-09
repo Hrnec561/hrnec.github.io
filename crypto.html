@@ -1,61 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
-    <title>Hrnec - Home</title>
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-  </head>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script src="https://www.cryptohopper.com/widgets/js/script"></script>
+  <meta name="viewport" content="width=device-width">
+  <title>Hrnec - Home</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="icon" href="hrnec.ico" type="image/x-icon">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="</>">  
+  <meta property="og:url" content="https://hrnec.tk">
+  <meta property="og:title" content="Hrnec">
+  <meta property="theme-color" content="#232933">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Hrnec561/hrnec.github.io/main/dc.png">
+  <meta property="og:description" content="Home - Full stack self learned developer">
+  <meta property="twitter:url" content="https://hrnec.tk/">
+	<meta property="twitter:title" content="Hrnec">
+	<meta property="twitter:description" content="Home - Full stack self learned developer">
+	<meta property="twitter:image" content="https://raw.githubusercontent.com/Hrnec561/hrnec.github.io/main/dc.png">
+</head>
   <body>
-    <h1>Title</h1>
-    <py-env>
-      - numpy
-      - requests
-      - session
-      - json
-    </py-env>
-    <py-script>
-import sys
-from requests import Request, Session
-import json
-from requests.exceptions import ConnectionError
-        
-url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest"    
-parameters = {
-    "slug": "bitcoin",
-    "convert": "USD"
-}    
-headers = {
-    "Accepts": "application/json",
-    "X-CMC_PRO_API_KEY": "353705e3-9aaf-4294-851e-7cdd340bee80"
-}
-        
-session = Session()
-session.headers.update(headers)
-try:
-    response = session.get(url, params = parameters)
-    data = json.loads(response.text)
-        
-    price = data["data"]["1"]["quote"]["USD"]["price"]
-    hour = data["data"]["1"]["quote"]["USD"]["percent_change_1h"]
-    day = data["data"]["1"]["quote"]["USD"]["percent_change_24h"]
-    week = data["data"]["1"]["quote"]["USD"]["percent_change_7d"]
-    month = data["data"]["1"]["quote"]["USD"]["percent_change_30d"]
-        
-    print(f"""
-=======================================
-                BITCOIN
-=======================================
-Price: {round(price, 2)}$
-Percent change last hour: {round(hour, 2)}%
-Percent change 1 day: {round(day, 2)}%
-Percent change 1 week: {round(week, 2)}%
-Percent change 1 month: {round(month, 2)}%
-=======================================
-""")
-except ConnectionError:
-    print("ConnectionError")
-    </py-script>
+    <hr class="oddelovak-mini">
+<br>
+<br>
+  <div class="header">Hrnec
+    <input type="checkbox" clas="toggle-sidebar" id="toggle-sidebar" hidden>
+    <label for="toggle-sidebar" class="toggle-icon">
+      <div class="bar-top"></div>
+      <div class="bar-center"></div> 
+      <div class="bar-bottom"></div>
+     </label>
+  <div class="sidebar">
+    <div class="profile">
+      <img src="profile.png" alt="">
+      <h3>Hrnec</h3>
+      <li><a href="#"><ion-icon name="logo-discord"></ion-icon></a></li>
+      <li><a href="#"><ion-icon name="logo-youtube"></ion-icon></a></li>
+      <li><a href="https://tiktok.com/@hrnec561"><ion-icon name="logo-tiktok"></ion-icon></a></li>
+    </div>
+    <ul class="menu">
+      <li><a href="https://hrnec.tk/">Home</a></li>
+      <li><a href="https://hrnec.tk/">About</a></li>
+      <li><a href="https://hrnec.tk/">Social</a></li>
+      <li><a href="https://hrnec.tk/">Contact</a></li>
+    </ul>
+  </div>
+</div>
+<br>
+    <div class="cryptohopper-web-widget" data-id="2" data-numcoins="10" data-theme="dark" data-realtime="on" data-currency="CZK" data-ticker_design="0"></div>
   </body>
 </html>
