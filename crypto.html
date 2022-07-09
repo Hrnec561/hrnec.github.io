@@ -9,11 +9,16 @@
   </head>
   <body>
     <h1>Title</h1>
+    <py-env>
+    - numpy
+    - requests
+    - session
+    - json
+    </py-env>
     <py-script>
 import sys
 from requests import Request, Session
 import json
-import pprint
 from requests.exceptions import ConnectionError
         
 def bitcoin():
