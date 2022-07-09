@@ -11,17 +11,51 @@
     <h1>Title</h1>
     <py-env>
       - numpy
-      - matplotlib
+      - requests
+      - session
+      - json
     </py-env>
     <py-script>
-import matplotlib.pyplot as plt
-import numpy as np
-      
-x = np.arange(0, 3 * np.pi, 0.1)
-y = np.sin(x)
-      
-plt.plot(x, y)
-plt.show()
+import sys
+from requests import Request, Session
+import json
+from requests.exceptions import ConnectionError
+        
+url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest"    
+parameters = {
+    "slug": "bitcoin",
+    "convert": "USD"
+}    
+headers = {
+    "Accepts": "application/json",
+    "X-CMC_PRO_API_KEY": "353705e3-9aaf-4294-851e-7cdd340bee80"
+}
+        
+session = Session()
+session.headers.update(headers)
+try:
+    response = session.get(url, params = parameters)
+    data = json.loads(response.text)
+        
+    price = data["data"]["1"]["quote"]["USD"]["price"]
+    hour = data["data"]["1"]["quote"]["USD"]["percent_change_1h"]
+    day = data["data"]["1"]["quote"]["USD"]["percent_change_24h"]
+    week = data["data"]["1"]["quote"]["USD"]["percent_change_7d"]
+    month = data["data"]["1"]["quote"]["USD"]["percent_change_30d"]
+        
+    print(f"""
+=======================================
+                BITCOIN
+=======================================
+Price: {round(price, 2)}$
+Percent change last hour: {round(hour, 2)}%
+Percent change 1 day: {round(day, 2)}%
+Percent change 1 week: {round(week, 2)}%
+Percent change 1 month: {round(month, 2)}%
+=======================================
+""")
+except ConnectionError:
+    print("ConnectionError")
     </py-script>
   </body>
 </html>
